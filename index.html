@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mama Njeri's Kitchen</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #313338;
+            padding: 24px 15px;
+            color: #222;
+        }
+
+        .preview-card {
+            max-width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        header {
+            background-color: #1a110a;
+            padding: 16px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        header .brand {
+            color: #f1b82d;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        header nav a {
+            color: #f1b82d;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 14px;
+        }
+
+        header nav a:hover {
+            color: #fff;
+        }
+
+        .hero {
+            background: linear-gradient(110deg, #e06d2a, #f39233, #e06d2a);
+            color: #fff;
+            text-align: center;
+            padding: 48px 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(25px, 4vw, 42px);
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 19px;
+        }
+
+        .main-content {
+            padding: 18px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .card, .info-box {
+            background-color: #fff;
+            border: 1px solid #d3d3d3;
+            padding: 16px;
+            border-radius: 7px;
+            min-width: 0;
+        }
+
+        .card h2, .info-box h2 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1b82d;
+            color: #1a110a;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 11px 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        button {
+            background-color: #da4f36;
+            color: #fff;
+            border: none;
+            padding: 11px 16px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #bd3e29;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .gallery img {
+            display: block;
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 7px;
+        }
+
+        .contact-details p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .placeholder {
+            color: #666;
+        }
+
+        footer {
+            background-color: #1a110a;
+            color: #eee;
+            text-align: center;
+            padding: 14px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 10px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 12px;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav a {
+                margin: 0 7px;
+            }
+
+            .gallery img {
+                height: 110px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 190px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-card">
+        <header>
+            <div class="brand">Mama Njeri's Kitchen</div>
+            <nav>
+                <a href="#menu">Menu</a>
+                <a href="#order">Order</a>
+                <a href="#visit">Visit</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Fresh Kenyan food, cooked daily</h1>
+            <p>Taste the difference!</p>
+        </section>
+
+        <main class="main-content">
+            <section class="card" id="menu">
+                <h2>Our Menu</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dish</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Pilau</td><td>KES 350</td></tr>
+                        <tr><td>Ugali &amp; Sukuma</td><td>KES 250</td></tr>
+                        <tr><td>Chapati (2)</td><td>KES 100</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="card" id="order">
+                <h2>Place an order</h2>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <input type="text" id="customerName" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="dish" required>
+                            <option value="Pilau">Pilau</option>
+                            <option value="Ugali & Sukuma">Ugali &amp; Sukuma</option>
+                            <option value="Chapati (2)">Chapati (2)</option>
+                        </select>
+                    </div>
+                    <button type="submit">Send order</button>
+                    <p id="orderMessage" class="placeholder" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+
+            <section class="info-box" aria-labelledby="galleryHeading">
+                <h2 id="galleryHeading">Our Food Gallery</h2>
+                <div class="gallery">
+                    <img src="images/pilau.jpg" alt="A plate of Kenyan pilau">
+                    <img src="images/chapati.jpg" alt="Freshly cooked Kenyan chapati">
+                    <img src="images/ugali-sukuma.jpg" alt="Ugali served with sukuma wiki">
+                </div>
+            </section>
+
+            <section class="info-box contact-details" id="visit">
+                <h2>Opening hours and contact</h2>
+                <p><strong>Opening hours:</strong><br><span class="placeholder">Add your business opening hours here.</span></p>
+                <p><strong>Contact:</strong><br><span class="placeholder">Add your phone number here.</span></p>
+                <p><strong>Location:</strong><br><span class="placeholder">Add your location or address here.</span></p>
+            </section>
+        </main>
+
+        <footer>
+            &copy; 2026 Mama Njeri's Kitchen
+        </footer>
+    </div>
+
+    <script>
+        // This demo confirms the selected order on the page.
+        // It does not send the order to a restaurant or phone number.
+        document.getElementById("orderForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const name = document.getElementById("customerName").value.trim();
+            const dish = document.getElementById("dish").value;
+            document.getElementById("orderMessage").textContent =
+                "Thank you, " + name + ". Your selection is " + dish +
+                ". Add a WhatsApp number or ordering service to receive real orders.";
+        });
+    </script>
+</body>
+</html>
